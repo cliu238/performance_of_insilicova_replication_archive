@@ -38,8 +38,10 @@ def download_ghdx_data():
         child_data (dataframe)
         neonate_data (dataframe)
     """
-    if not os.path.exists(GHDX_DATA_DIR): # https://stackoverflow.com/questions/273192/
-        os.makedirs(GHDX_DATA_DIR)
+    try:
+        os.mkdir(GHDX_DATA_DIR)
+    except OSError:
+        pass   # folder already exists
 
     out = []
     ghdx_url = ('http://ghdx.healthdata.org/sites/default/files/'

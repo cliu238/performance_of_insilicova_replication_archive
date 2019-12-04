@@ -1,0 +1,15 @@
+n_records: 12,530
+n_adult: 7,841
+n_child: 2,064
+n_neonate: 1,620
+n_stillbirth: 1,005
+n_adult_causes: 36
+n_adult_i_symptoms: 123
+n_adult_t_symptoms: 171
+n_child_causes: 20
+n_child_i_symptoms: 69
+n_child_t_symptoms: 86
+n_neonate_causes: 7
+n_neonate_i_symptoms: 62
+n_neonate_t_symptoms: 110
+n_hyperparam: 10

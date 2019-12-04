@@ -1,0 +1,90 @@
+module,cause,icd,WHO ICD definition and comments
+adult,AIDS,B24,Unspecified human immunodeficiency virus [HIV] disease
+adult,AIDS with TB,B20,
+adult,Diarrhea/Dysentery,A09,Other gastroenteritis and colitis of infectious and unspecified origin
+adult,Malaria,B54,Unspecified malaria
+adult,Maternal,O95,"Obstetric death of unspecified cause: Maternal death from unspecified cause occurring during pregnancy, labour and delivery, or the puerperium"
+adult,Hypertensive Disorder,O16,
+adult,Obstructed Labor,O64,
+adult,Hemorrhage,O67,
+adult,Sepsis,O23,
+adult,Anemia,O99,
+adult,Other Pregnancy-Related Deaths,O95,
+adult,Other Infectious Diseases,B99,Other and unspecified infectious diseases
+adult,Pneumonia,J22,Unspecified acute lower respiratory infection
+adult,TB,A16,"Respiratory tuberculosis, not confirmed bacteriologically or histologically"
+adult,Ishaemic Heart Diseases,I24,Other acute ischaemic heart diseases (as for WHO 2014)
+adult,Acute Myocardial Infarction,I21,
+adult,Diabetes with Skin Infection/Sepsis,E11,
+adult,Diabetes with Renal Failure,E11,
+adult,Diabetes with Coma,E11,
+adult,Other Cancers,C80,
+adult,Leukemia,C94,
+adult,Lymphomas,C96,
+adult,Other Digestive Diseases,K92,
+adult,Inflammatory Heart Disease,I52,
+adult,Congestive Heart Failure,I50,
+adult,Breast Cancer,C50,Malignant neoplasm of breast
+adult,Chronic Respiratory Diseases,J44,Other chronic obstructive pulmonary disease
+adult,Asthma,J45,
+adult,COPD,J33,
+adult,Cervical Cancers,C53,Malignant neoplasm of cervix uteri (WHO VA has C55 for all female reproductive neoplasms)
+adult,Cirrhosis,K74,Fibrosis and cirrhosis of liver
+adult,Colorectal Cancer,C18,Malignant neoplasm of colon 
+adult,Diabetes,E14,Unspecified diabetes mellitus
+adult,Esophageal Cancer,C15,Malignant neoplasm of oesophagus
+adult,Leukemia/Lymphomas,C96,"Other and unspecified malignant neoplasms of lymphoid, haematopoietic and related tissue"
+adult,Lung Cancer,C34,Malignant neoplasm of bronchus and lung
+adult,Other Cardiovascular Diseases,I99,Other and unspecified disorders of circulatory system
+adult,Other Non-communicable Diseases,R100*,Other ill-defined and unspecified causes of mortality
+adult,Prostate Cancer,C61,Malignant neoplasm of prostate
+adult,Renal Failure (due to renal disease),N19,Unspecified kidney failure
+adult,Stomach Cancer,C16,Malignant neoplasm of stomach
+adult,Stroke,I64,"Stroke, not specified as haemorrhage or infarction"
+adult,Epilepsy,G40,
+adult,Other Cancers ,C76,Malignant neoplasm of other and ill-defined sites
+adult,Bite of Venomous Animal,X27,Contact with other specified venomous animals
+adult,Drowning,W74,Unspecified drowning and submersion
+adult,Falls,W19,Unspecified fall
+adult,Fires,X09,"Exposure to unspecified smoke, fire and flames"
+adult,Homicide (assult),Y09,Assault by unspecified means
+adult,Other Injuries,X58,Exposure to other specified factors
+adult,Poisonings (accidental),X49,Accidental poisoning by and exposure to other and unspecified chemicals and noxious substances
+adult,Road Traffic,V89,"Motor- or nonmotor-vehicle accident, type of vehicle unspecified"
+adult,Suicide (intentional self-harm),X84,Intentional self-harm by unspecified means
+child,AIDS,B24,Unspecified human immunodeficiency virus [HIV] disease
+child,Diarrhea/Dysentery,A09,Other gastroenteritis and colitis of infectious and unspecified origin
+child,Encephalitis,G04,"Encephalitis, myelitis and encephalomyelitis"
+child,Hemorrhagic fever,A99,Unspecified viral haemorrhagic fever
+child,Malaria,B54,Unspecified malaria
+child,Measles,B05,Measles
+child,Meningitis,G03,Meningitis due to other and unspecified causes
+child,Other Infectious Diseases,B99,Other and unspecified infectious diseases
+child,Pneumonia,J22,Unspecified acute lower respiratory infection
+child,Sepsis,A41,Other causes of sepsis
+child,Sepsis with Local Bacterial Infection,A41,
+child,Sepsis without Local Bacterial Infection,A41,
+child,Cancers,C76,Malignant neoplasm of other and ill-defined sites
+child,Cardiovascular Diseases,I99,Other and unspecified disorders of circulatory system
+child,Other Defined Causes of Child Deaths,R101*,
+child,Digestive Diseases,K92,Other diseases of digestive system
+child,Bite of Venomous Animal,X27,Contact with other specified venomous animals
+child,Drowning,W74,Unspecified drowning and submersion
+child,Falls,W19,Unspecified fall
+child,Fires,X09,"Exposure to unspecified smoke, fire and flames"
+child,Poisonings,X49,Accidental poisoning by and exposure to other and unspecified chemicals and noxious substances
+child,Road Traffic,V89,"Motor- or nonmotor-vehicle accident, type of vehicle unspecified"
+child,Violent Death,Y09,Assault by unspecified means
+neonate,Birth asphyxia,P21,Birth asphyxia
+neonate,Congenital malformation,Q89,"Other congenital malformations, not elsewhere classified"
+neonate,Meningitis/Sepsis,P36,Bacterial sepsis of newborn
+neonate,Sepsis with Local Bacterial Infection,P39,
+neonate,Pneumonia,J22,Unspecified acute lower respiratory infection
+neonate,Preterm Delivery,P07,"Disorders related to short gestation and low birth weight, not elsewhere classified"
+neonate,Preterm Delivery (with or without RDS) and Sepsis,P07,
+neonate,Preterm Delivery (without RDS) and Sepsis and Birth Asphyxia,P07,
+neonate,Preterm Delivery (without RDS) and Birth Asphyxia,P07,
+neonate,Preterm Delivery without Respiratory Distress Syndrome,P07,
+neonate,Preterm Delivery with Respiratory Distress Syndrome,P22,
+neonate,Stillbirth,P95,Fetal death of unspecified cause
+neonate,Other defined causes of neonatal death,R102*,

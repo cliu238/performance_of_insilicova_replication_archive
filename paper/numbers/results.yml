@@ -1,0 +1,43 @@
+table_ccc: 1
+tariff_adult_ccc: {lb: 28.3%, ub: 28.7%, value: 28.5%}
+tariff_adult_cccsmf: {lb: 0.5%, ub: 3.9%, value: 2.1%}
+default_adult_ccc: {lb: 16.0%, ub: 16.2%, value: 16.1%}
+default_adult_cccsmf: {lb: -61.7%, ub: -57.7%, value: -59.4%}
+insilico_adult_ccc: {lb: 28.3%, ub: 29.2%, value: 28.7%}
+insilico_adult_cccsmf: {lb: 2.6%, ub: 5.4%, value: 4.3%}
+tariff_child_ccc: {lb: 38.4%, ub: 39.5%, value: 38.8%}
+tariff_child_cccsmf: {lb: 20.7%, ub: 23.9%, value: 22.3%}
+default_child_ccc: {lb: 29.0%, ub: 29.4%, value: 29.2%}
+default_child_cccsmf: {lb: -48.4%, ub: -43.6%, value: -46.2%}
+insilico_child_ccc: {lb: 35.5%, ub: 36.3%, value: 35.8%}
+insilico_child_cccsmf: {lb: -13.5%, ub: -7.3%, value: -10.4%}
+tariff_neonate_ccc: {lb: 37.2%, ub: 38.3%, value: 37.8%}
+tariff_neonate_cccsmf: {lb: 33.7%, ub: 40.8%, value: 37.6%}
+default_neonate_ccc: {lb: 19.1%, ub: 19.4%, value: 19.2%}
+default_neonate_cccsmf: {lb: -43.8%, ub: -32.1%, value: -39.9%}
+insilico_neonate_ccc: {lb: 27.9%, ub: 29.0%, value: 28.4%}
+insilico_neonate_cccsmf: {lb: 4.9%, ub: 15.1%, value: 10.9%}
+table_cccsmf: 2
+diff_adult_ccc: '9.3'
+diff_adult_cccsmf: '21.0'
+diff_child_ccc: '5.8'
+diff_child_cccsmf: '8.2'
+diff_neonate_ccc: '4.5'
+diff_neonate_cccsmf: '11.6'
+pct_unconverged_lower: 81.5%
+pct_unconverged_upper: 4.7%
+pct_unconverged_lower_ext: 27.8%
+pct_unconverged_upper_ext: 0.0%
+adult_high_ccc_causes: [Bite of Venomous Animal, Drowning, Maternal]
+child_high_ccc_causes: [Bite of Venomous Animal, Drowning, Road Traffic]
+neonate_high_ccc_causes: [Meningitis/Sepsis, Preterm Delivery, Stillbirth]
+n_rand_ccc: 7
+higher_ccc_adult: [Drowning, Lung Cancer, Maternal, Stomach Cancer, Suicide]
+higher_ccc_child: [AIDS, Drowning, Malaria, Other Defined Causes of Child Deaths,
+  Other Digestive Diseases, Other Infectious Diseases, Pneumonia]
+higher_ccc_neonate: [Birth asphyxia, Meningitis/Sepsis, Preterm Delivery, Stillbirth]
+n_phmrc_causes: 61
+n_insilico_higher_sens: 22
+n_insilico_higher_spec: 32
+table_adult_ccc: 3
+table_neonate_ccc: 5

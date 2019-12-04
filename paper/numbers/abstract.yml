@@ -1,0 +1,9 @@
+default_min: -59.4%
+default_max: -38.5%
+insilico_min: -11.5%
+insilico_max: 17.5%
+tariff_min: 2.1%
+tariff_max: 37.6%
+diff_lower: '11.6'
+diff_upper: '8.2'
+keywords: verbal autopsy, cause of death diagnosis, validation

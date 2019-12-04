@@ -1,0 +1,33 @@
+---
+title: >-
+  Performance of InSilicoVA for assigning causes of death to verbal autopsies:
+  multisite validation study using clinical diagnostic gold standards
+authors:
+  - name: Abraham D. Flaxman
+    affiliation: IHME
+    corresponding_author: True
+    email: abie@uw.edu
+  - name: Jonathan C. Joseph
+    affiliation: IHME
+    email: josephj7@uw.edu
+  - name: Christopher JL Murray
+    affiliation: IHME
+    email: cjlm@uw.edu
+  - name: Ian Douglas Riley
+    affiliation: UMel
+    email: ian.riley@unimelb.edu.au
+  - name: Alan D. Lopez
+    affiliation: UMel
+    email: alan.lopez@unimelb.edu.au
+affiliations:
+  IHME: >-
+    Institute for Health Metrics and Evaluation, University of Washington,
+    Seattle, Washington, United States of America
+  UMel: >-
+    School of Population and Global Health, University of Melbourne, Parkville,
+    VIC, Australia
+keywords:
+  - verbal autopsy
+  - cause of death diagnosis
+  - validation
+...
