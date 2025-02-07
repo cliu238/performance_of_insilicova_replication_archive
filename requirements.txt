@@ -1,0 +1,8 @@
+pandas
+sshtunnel
+sqlalchemy
+pymysql
+psycopg2-binary
+pytest
+numpy
+rpy2
