@@ -1,23 +1,42 @@
-# Use the latest Python image
-FROM python:3.13.1
+# Use the Rocker R base image
+FROM rocker/r-ver:4.3.1
 
-# Set the working directory inside the container
+# Install Python, R dependencies, and system libraries
+RUN apt-get update && \
+    apt-get install -y \
+    python3 python3-pip python3-venv python3-setuptools \
+    libpcre2-dev liblzma-dev libbz2-dev libicu-dev libffi-dev \
+    libcurl4-openssl-dev default-jdk \
+    r-base r-base-dev libxml2-dev && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Ensure setuptools, pip, and wheel are up-to-date
+RUN pip install --upgrade pip setuptools wheel
+
+# Install rpy2 and set up R library paths
+RUN pip install rpy2
+
+# Set environment variables for R
+ENV JAVA_HOME=/usr/lib/jvm/default-java
+ENV R_HOME=/usr/lib/R
+ENV R_USER=/root
+ENV LD_LIBRARY_PATH=/usr/lib/R/lib/:$LD_LIBRARY_PATH
+
+# Install the R package InSilicoVA and dependencies
+RUN R -e "install.packages(c('InSilicoVA', 'methods', 'utils', 'grDevices', 'graphics', 'stats', 'rJava'), repos='http://cran.r-project.org')"
+
+# Set the working directory
 WORKDIR /app
 
-# Copy the source script
+# Copy your source code and dependency files
 COPY ./src/download.py src/download.py
-
-# Copy dependencies if available
 COPY ./requirements.txt requirements.txt
 
-# Install dependencies only if `requirements.txt` exists
+# Install Python dependencies if the requirements file exists
 RUN if [ -f requirements.txt ]; then pip install --no-cache-dir -r requirements.txt; fi
 
-# Ensure required directories exist before running
+# Create data directories
 RUN mkdir -p /app/data/ghdx
 
-# Set environment variable to avoid Python buffer issues
-ENV PYTHONUNBUFFERED=1
-
-# Run the script when the container starts
-CMD ["python", "src/map_insilico.py"]
+# Set the default command (uncomment and adjust as needed)
+CMD ["pytest", "test/test_insilico.py"]
