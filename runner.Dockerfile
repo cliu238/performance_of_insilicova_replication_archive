@@ -21,9 +21,10 @@ ENV JAVA_HOME=/usr/lib/jvm/default-java
 ENV R_HOME=/usr/lib/R
 ENV R_USER=/root
 ENV LD_LIBRARY_PATH=/usr/lib/R/lib/:$LD_LIBRARY_PATH
-
+RUN R -e "install.packages('rlang', repos='https://cloud.r-project.org', type='source')"
+RUN R -e "install.packages('rJava', repos='https://cloud.r-project.org')"
 # Install the R package InSilicoVA and dependencies
-RUN R -e "install.packages(c('InSilicoVA', 'methods', 'utils', 'grDevices', 'graphics', 'stats', 'rJava'), repos='http://cran.r-project.org')"
+RUN R -e "install.packages(c('InSilicoVA', 'methods', 'utils', 'grDevices', 'graphics', 'stats'), repos='http://cran.r-project.org')"
 
 # Set the working directory
 WORKDIR /app
@@ -39,4 +40,5 @@ RUN if [ -f requirements.txt ]; then pip install --no-cache-dir -r requirements.
 RUN mkdir -p /app/data/ghdx
 
 # Set the default command (uncomment and adjust as needed)
-CMD ["pytest", "test/test_insilico.py"]
+# CMD ["pytest", "test/test_insilico.py"]
+CMD ["/bin/bash"]

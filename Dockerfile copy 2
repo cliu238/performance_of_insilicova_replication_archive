@@ -1,8 +1,16 @@
-FROM ubuntu:18.04
+FROM ubuntu:16.04
 
-MAINTAINER Jonathan Joseph <josephj7@uw.edu>
-ENV DEBIAN_FRONTEND=noninteractive
-
+RUN apt-get update -qq && \
+    apt-get install -y --no-install-recommends \
+        apt-transport-https \
+        ca-certificates \
+        software-properties-common \
+        dirmngr \
+        wget && \
+    echo "deb https://mran.microsoft.com/snapshot/2019-12-01/bin/linux/ubuntu xenial-cran35/" > /etc/apt/sources.list.d/mran.list && \
+    apt-get update -qq && \
+    apt-get install -y r-base r-base-dev && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN apt-get update -qq && apt-get install -y \
          curl \
          dpkg \
@@ -14,7 +22,7 @@ RUN apt-get update -qq && apt-get install -y \
          pandoc-citeproc \
          python3 \
          python3-pip \
-         python3-venv \
+         python3.5-venv \
          python3-tk \
          r-base \
          r-base-dev \
@@ -55,11 +63,9 @@ RUN python3 -m pip --no-cache-dir install notebook==5.4.0
 # Install core scientific libraries
 RUN python3 -m pip --no-cache-dir install numpy==1.14.1
 
-RUN python3 -m pip --no-cache-dir install scipy==1.5.4
+RUN python3 -m pip --no-cache-dir install scipy==1.0.0
 
-RUN python3 -m pip --no-cache-dir install pandas==1.1.5
-
-#RUN python3 -m pip --no-cache-dir install pandas==0.22.0
+RUN python3 -m pip --no-cache-dir install pandas==0.22.0
 
 RUN python3 -m pip --no-cache-dir install statsmodels==0.8.0
 
@@ -72,7 +78,7 @@ RUN python3 -m pip --no-cache-dir install seaborn==0.8.1
 RUN python3 -m pip --no-cache-dir install scikit-learn==0.19.1
 
 # Install YAML and Excel file handling libraries
-RUN python3 -m pip --no-cache-dir install pyyaml==3.12
+RUN python3 -m pip --no-cache-dir install --ignore-installed pyyaml==3.12
 
 RUN python3 -m pip --no-cache-dir install openpyxl==2.5.0
 
@@ -93,11 +99,11 @@ RUN python3 -m pip --no-cache-dir install sphinx==1.7.0
 # Install R-Python interface
 RUN python3 -m pip --no-cache-dir install rpy2==2.8.5
 
-# # Clean up cache
-# RUN rm -rf /root/.cache /usr/local/bin/__pycache__
+# Clean up cache
+RUN rm -rf /root/.cache /usr/local/bin/__pycache__
 
-# # Remove Python __pycache__ directories
-# RUN find /usr/local/lib/python3.5/dist-packages/ -depth -type d -name __pycache__ -exec rm -rf '{}' \;
+# Remove Python __pycache__ directories
+RUN find /usr/local/lib/python3.5/dist-packages/ -depth -type d -name __pycache__ -exec rm -rf '{}' \;
 ## Install Java
 # Copy the Oracle JDK 8 tarball into the Docker image
 COPY ./jdk-8u202-linux-arm64-vfp-hflt.tar.gz /tmp/jdk8.tar.gz
@@ -133,20 +139,23 @@ RUN echo "/usr/lib/jvm/jdk1.8.0_202/jre/lib/amd64/server/" > /etc/ld.so.conf.d/r
 # Update dynamic linker run-time bindings
 RUN /sbin/ldconfig
 
-R -q -e "install.packages('devtools', repos='http://cran.us.r-project.org')"
-R -q -e "devtools::install_version('ggplot2', version='3.1.1', repos='http://cran.us.r-project.org')"
+# Install required R packages
+RUN R -q -e "install.packages(c('rJava', 'coda', 'ggplot2'), repos='http://cran.us.r-project.org')"
 
-# # Install required R packages
-# RUN R -q -e "install.packages(c('rJava', 'coda', 'ggplot2'), repos='http://cran.us.r-project.org')"
+# Install required R packages explicitly in the default library path
+RUN R -q -e "install.packages(c('rJava', 'coda', 'ggplot2'), repos='http://cran.us.r-project.org', lib='/usr/local/lib/R/site-library')"
 
-# # Install required R packages explicitly in the default library path
-# RUN R -q -e "install.packages(c('rJava', 'coda', 'ggplot2'), repos='http://cran.us.r-project.org', lib='/usr/local/lib/R/site-library')"
+# Verify that the dependencies are installed correctly
+RUN R -q -e "installed.packages()[, c('Package', 'Version')]"
 
-# # Verify that the dependencies are installed correctly
-# RUN R -q -e "installed.packages()[, c('Package', 'Version')]"
+# Download the InSilicoVA package
+RUN wget https://cran.r-project.org/src/contrib/Archive/InSilicoVA/InSilicoVA_1.1.4.tar.gz
 
-# # Download the InSilicoVA package
-# RUN wget https://cran.r-project.org/src/contrib/Archive/InSilicoVA/InSilicoVA_1.1.4.tar.gz
+
+# RUN R -q -e "install.packages('remotes', repos='http://cran.us.r-project.org')"
+# RUN R -q -e "remotes::install_version('rJava', version='0.9-8', repos='http://cran.us.r-project.org')"
+# RUN R -q -e "remotes::install_version('coda', version='0.18-1', repos='http://cran.us.r-project.org')"
+# RUN R -q -e "remotes::install_version('ggplot2', version='2.2.1', repos='http://cran.us.r-project.org')"
 
 # # # Install the InSilicoVA package
 # RUN R CMD INSTALL InSilicoVA_1.1.4.tar.gz

@@ -4,10 +4,10 @@ from warnings import warn
 
 import numpy as np
 from rpy2 import robjects
-from rpy2.rinterface import RNULLType
+from rpy2.rinterface_lib.sexp import NULLType as RNULLType
 from rpy2.robjects.packages import importr
 from rpy2.robjects import pandas2ri
-from rpy2.robjects.pandas2ri import ri2py
+ri2py = pandas2ri
 
 
 class InsilicoClassifier(object):

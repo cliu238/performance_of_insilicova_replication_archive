@@ -5,4 +5,3 @@ pymysql
 psycopg2-binary
 pytest
 numpy
-rpy2==3.4.5
